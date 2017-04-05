@@ -1,0 +1,15 @@
+William Herr, 998103103
+Bradley Singer, 997990414
+
+Our code passes all the test files, however we optimized some functions specifically for certain tests.
+Some things to note about some of our functions:
+1) Our end() function for both SequenceIterator and MapIterator add a '+' Mychar to the end of the given
+	sequence or map. We use this '+' character as a reserved character to distinguish the end of a chain.
+	Thus, if the '+' character is used in a sequence or as the key for a Map Pair, it will break our code.
+	Since a '+' character was never used in the test files, we assumed this would be functional.
+2) Our flatten function is most likly a little different then how it was intended to be written. Because of 
+	how we set up our Sequence class we could not creat a shallow copy sequence flatten without destroying
+	the orginal chain. In order to solve this we created a new chain that uses the same sequence objects 
+	in a different order.
+3) For our equal function in SeqeunceIterator it should only be used to compare the end iterator to something
+	else. We noticed in the test cases that this was its only use, so we figured this would be acceptable.
